@@ -53,7 +53,7 @@ export const applyChanges = (temp, hum, p, i, d) => dispatch => {
 // connection helper
 const connectToMqttBroker = dispatch => {
     try {
-        client = new Paho.MQTT.Client('broker.mqttdashboard.com', Number(8000), '/mqtt','wss//' ,'');
+        client = new Paho.MQTT.Client('wss://broker.mqttdashboard.com', Number(8000), '/mqtt' ,'');
 
         client.onConnectionLost =  responseObject => {
             console.log('Connection Lost: ' + responseObject.errorMessage);
